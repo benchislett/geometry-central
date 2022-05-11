@@ -14,5 +14,6 @@ TEST(BasicTest, HelloWorldTest) {
 
 int main(int argc, char** argv) {
   ::testing::InitGoogleTest(&argc, argv);
+  ::testing::GTEST_FLAG(filter) = "*Ben*";
   return RUN_ALL_TESTS();
 }

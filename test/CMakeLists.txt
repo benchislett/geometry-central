@@ -101,12 +101,13 @@ set(TEST_SRCS
   src/linear_algebra_test.cpp
   src/stl_reader_test.cpp
   src/intrinsic_triangulation_test.cpp
+  src/ben_test.cpp
 )
 
 add_executable(geometry-central-test "${TEST_SRCS}")
 target_include_directories(geometry-central-test PUBLIC "${gtest_SOURCE_DIR}/include")
 target_include_directories(geometry-central-test PRIVATE "include/")
-target_link_libraries(geometry-central-test gtest_main geometry-central)
+target_link_libraries(geometry-central-test gtest_main geometry-central polyscope)
 
 # Add geometry central as a subproject
 add_subdirectory(../ "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}")
