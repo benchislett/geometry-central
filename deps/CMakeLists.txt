@@ -153,10 +153,13 @@ target_include_directories(nanoflann INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT
 add_library(happly INTERFACE)
 target_include_directories(happly INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/happly>)
 
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/polyscope)
+
 # Find other simpler dependencies
 list(APPEND GC_DEP_LIBS nanort)
 list(APPEND GC_DEP_LIBS nanoflann)
 list(APPEND GC_DEP_LIBS happly)
+list(APPEND GC_DEP_LIBS polyscope)
 
 # == Ensure all paths are absolute
 
